@@ -11,8 +11,10 @@
 }
 
 .section-team.list {
-  display: flex;
-  flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .section-team .text {
@@ -24,34 +26,49 @@
 }
 .section-team .item {
   max-width: 450px;
+  height: 482px;
   padding-bottom: 24px;
   width: 270px;
-  height: 422px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 
   background-color: $secondary-text-color;
   text-align: center;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     margin-bottom: 30px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 480px) {
     width: 354px;
+    height: 422px;
   }
 
-  @media screen and(min-width:1200px) {
+  @media screen and (min-width: 1200px) {
     width: 270px;
+    height: 422px;
   }
 
   &:not(:last-child) {
     margin-right: 15px;
   }
+}
+.team-img {
+  padding-bottom: 30px;
 
-  & > img {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 30px;
+  & img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: top;
+
+    @media screen and (max-width: 479px) {
+      width: 450px;
+      height: 320px;
+    }
+    @media screen and (min-width: 768px) {
+      height: 260px;
+    }
   }
 }
 

@@ -5,6 +5,7 @@
 
 .logo {
   @extend %logo;
+  display: inline-flex;
 
   .logo-head {
     color: $accent-color;

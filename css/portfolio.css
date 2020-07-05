@@ -148,6 +148,12 @@ body {
   border-bottom: 1px solid #ececec;
 }
 
+.logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .logo .logo-head {
   color: #2196f3;
 }
