@@ -1,0 +1,212 @@
+.main-nav {
+  @extend %flexCenterY;
+  height: 100%;
+}
+.menu-nav {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  padding: 60px 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms linear, visibility 250ms linear;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+    position: initial;
+    top: 0;
+    padding: 0;
+    border: none;
+  }
+  @media screen and (max-width: 767px) {
+    z-index: 999;
+  }
+
+  &.is-open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+}
+.menu-nav.is-open body {
+  overflow-y: scroll;
+}
+
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+
+  transition: fill 250ms $cubic;
+
+  outline: none;
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+    transition: fill 250ms $cubic;
+  }
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.site-nav {
+  @media screen and (min-width: 767px) {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}
+.site-nav .item {
+  display: block;
+  margin: 0 auto;
+  max-width: max-content;
+  transition: color 250ms $cubic;
+  padding: 12px 0;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 30px 0px;
+  }
+}
+
+.site-nav .item + .item {
+  @media screen and (min-width: 768px) {
+    margin-left: 50px;
+  }
+}
+.site-nav.list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-left: 81px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 86px;
+  }
+}
+
+.site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $title-text-color;
+  text-decoration: none;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+site-nav .link:not(:last-child) {
+  @media screen and (max-width: 479px) {
+    padding-bottom: 40px;
+  }
+}
+
+.site-nav .link.current {
+  color: $accent-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    background-color: $accent-color;
+  }
+}
+
+.contacts-nav .item {
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+.contacts-nav .item:not(:last-child) {
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 16px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 30px;
+  }
+}
+.item-icon {
+  margin-right: 10px;
+
+  .contacts-nav .link:hover &,
+  .contacts-nav .link:focus & {
+    fill: $accent-color;
+  }
+}
+.contacts-nav.list {
+  @media screen and(min-width:768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+  margin-left: auto;
+}
+
+.contacts-nav .link {
+  display: inline-flex;
+  align-items: center;
+  color: $primary-text-color;
+  fill: $primary-text-color;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms $cubic, fill 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}

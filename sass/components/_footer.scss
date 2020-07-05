@@ -1,0 +1,165 @@
+.footer {
+  background-color: $background-footer;
+  color: $secondary-text-color;
+}
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media screen and(min-width:480px) {
+    width: 480px;
+  }
+  @media screen and(min-width:768px) {
+    width: 768px;
+  }
+  @media screen and(min-width:1200px) {
+    width: 1200px;
+  }
+
+  @media screen and(min-width:1200px) {
+    flex-wrap: nowrap;
+  }
+}
+
+/* logo footer*/
+.logo.inverse {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: $secondary-text-color;
+}
+
+.footer-addres {
+  margin-bottom: 60px;
+
+  @media screen and(min-width:1200px) {
+    margin-right: 69px;
+  }
+}
+
+.footer-addres {
+  @media screen and (max-width: 767px) {
+    margin-right: 124px;
+    margin-left: 124px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 165px;
+  }
+}
+.contacts.list {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+
+  & > li:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+.contacts .link {
+  color: $links-footer;
+  text-decoration: none;
+
+  transition: color 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.footer .social {
+  margin-bottom: 60px;
+  margin-top: 8px;
+
+  @media screen and(min-width:768px) {
+    margin-bottom: 0;
+    margin-right: 94px;
+  }
+}
+
+.footer-text {
+  display: block;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.links.list {
+  display: flex;
+
+  & .item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.links-item-social {
+  @extend %flexCenter;
+  width: 44px;
+  height: 44px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  fill: $secondary-text-color;
+  text-decoration: none;
+
+  transition: background-color 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.footer-form.list {
+  @media screen and(min-width:1200px) {
+    display: flex;
+    align-items: center;
+  }
+}
+.button-secondary-icon {
+  margin-left: 10px;
+}
+
+.footer .signature {
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 12px;
+  padding-top: 18px;
+  padding-bottom: 21px;
+  margin-top: 0;
+
+  line-height: 2;
+  color: $signature-text-color;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-form-input {
+  display: inline-block;
+  width: 450px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 15px 16px 15px 16px;
+
+  background-color: $background-footer;
+  color: $secondary-text-color;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  @media screen and(min-width:1200px) {
+    width: 358px;
+    height: 50px;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
+}
